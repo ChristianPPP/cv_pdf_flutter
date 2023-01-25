@@ -15,10 +15,10 @@ const sep = 120.0;
 
 Future<Uint8List> generateResumeP(PdfPageFormat format, CustomData data) async {
   final doc =
-      pw.Document(title: 'Currículum Vitae', author: 'Christian Palacios');
+      pw.Document(title: 'Currículum Vitae', author: 'Poleth Arias');
 
   final profileImage = pw.MemoryImage(
-    (await rootBundle.load('assets/profile1.jpg')).buffer.asUint8List(),
+    (await rootBundle.load('assets/profileP.jpg')).buffer.asUint8List(),
   );
 
   final pageTheme = await _myPageTheme(format);
@@ -44,7 +44,7 @@ Future<Uint8List> generateResumeP(PdfPageFormat format, CustomData data) async {
                                 .defaultTextStyle
                                 .copyWith(fontWeight: pw.FontWeight.bold)),
                         pw.Padding(padding: const pw.EdgeInsets.only(top: 10)),
-                        pw.Text('Full Stack Developer',
+                        pw.Text('Frontend Developer',
                             textScaleFactor: 1.2,
                             style: pw.Theme.of(context)
                                 .defaultTextStyle
@@ -59,19 +59,18 @@ Future<Uint8List> generateResumeP(PdfPageFormat format, CustomData data) async {
                             pw.Column(
                               crossAxisAlignment: pw.CrossAxisAlignment.start,
                               children: <pw.Widget>[
-                                pw.Text('Guamaní, Calle 12'),
-                                pw.Text('Conjunto H Ciudad Jardín'),
-                                pw.Text('Departamento A16'),
+                                pw.Text('Chiillogallo, OE-108'),
+                               
                               ],
                             ),
                             pw.Column(
                               crossAxisAlignment: pw.CrossAxisAlignment.start,
                               children: <pw.Widget>[
-                                pw.Text('+593 968518334'),
-                                _UrlText('cristhianpalacios3@gmail.com',
-                                    'mailto:cristhianpalacios3@gmail.com'),
+                                pw.Text('+593 979494593'),
+                                _UrlText('ariaspoleth52@gmail.com',
+                                    'mailto:ariaspoleth52@gmail.com'),
                                 _UrlText('proyectos',
-                                    'https://github.com/ChristianPPP'),
+                                    'https://github.com/Poleth120'),
                               ],
                             ),
                             pw.Padding(padding: pw.EdgeInsets.zero)
@@ -82,7 +81,7 @@ Future<Uint8List> generateResumeP(PdfPageFormat format, CustomData data) async {
                   ),
                   _Category(title: 'Experiencia laboral'),
                   _Block(
-                      title: 'Auxiliar de TI y servicio técnico',
+                      title: 'Desarrolladora frontend en EP EPN-Tech',
                       icon: const pw.IconData(0xe762)),
                   pw.Container(
                     decoration: const pw.BoxDecoration(
@@ -94,11 +93,11 @@ Future<Uint8List> generateResumeP(PdfPageFormat format, CustomData data) async {
                     child: pw.Column(
                         crossAxisAlignment: pw.CrossAxisAlignment.start,
                         children: <pw.Widget>[
-                          pw.Text('Mantenimiento de equipos de cómputo, instalación de software, clonación, actividades de gestión de laboratorios.'),
+                          pw.Text('Desarrollo de un sistema web para el control y documentación de archivos.'),
                         ]),
                   ),
                   _Block(
-                      title: 'Desarrollador Backend App Botics',
+                      title: 'Desarrollador Frontend App Botics',
                       icon: const pw.IconData(0xe30d)),
                   pw.Container(
                     decoration: const pw.BoxDecoration(
@@ -110,12 +109,12 @@ Future<Uint8List> generateResumeP(PdfPageFormat format, CustomData data) async {
                     child: pw.Column(
                         crossAxisAlignment: pw.CrossAxisAlignment.start,
                         children: <pw.Widget>[
-                          pw.Text('Desarrollador de la funcionalidad y el manejo de datos de la aplicación web Botics para la gestión de laboratorios de informátoca de la ESFOT.'),
+                          pw.Text('Diseño de la aplicación web Botics para la gestión de laboratorios de informátoca de la ESFOT.'),
                         ]),
                   ),
                   pw.SizedBox(height: 20),
                   _Category(title: 'Educación'),
-                  _Block(title: 'Colegio Nacional Amazonas'),
+                  _Block(title: 'Academia Aeronáutica "Mayor Pedro Traversari"'),
                   pw.Container(
                     decoration: const pw.BoxDecoration(
                         border: pw.Border(
@@ -126,7 +125,7 @@ Future<Uint8List> generateResumeP(PdfPageFormat format, CustomData data) async {
                     child: pw.Column(
                         crossAxisAlignment: pw.CrossAxisAlignment.start,
                         children: <pw.Widget>[
-                          pw.Text('Estudios culminados 2012-2018'),
+                          pw.Text('Estudios culminados 2013-2019'),
                         ]),
                   ),
                   _Block(title: 'Escuela Politécnica Nacional'),
@@ -167,21 +166,20 @@ Future<Uint8List> generateResumeP(PdfPageFormat format, CustomData data) async {
                         pw.Column(children: <pw.Widget>[
                           _Percent(
                               size: 60,
-                              value: .7,
-                              title: pw.Text('Spring Boot')),
+                              value: .6,
+                              title: pw.Text('Python')),
                           _Percent(
-                              size: 50, value: .6, title: pw.Text('Laravel')),
+                              size: 60, value: .6, title: pw.Text('Laravel')),
                           _Percent(
-                              size: 50, value: .5, title: pw.Text('Angular')),
+                              size: 70, value: .7, title: pw.Text('Angular')),
                           _Percent(
                               size: 50, value: .4, title: pw.Text('Ionic')),
                           _Percent(
                               size: 50, value: .3, title: pw.Text('Flutter')),
-                          _Percent(
-                              size: 50, value: .6, title: pw.Text('Docker')),
+                          
                         ]),
                         pw.BarcodeWidget(
-                          data: 'Christian Palacios',
+                          data: 'Poleth Arias',
                           width: 60,
                           height: 60,
                           barcode: pw.Barcode.qrCode(),
